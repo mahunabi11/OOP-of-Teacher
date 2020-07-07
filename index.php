@@ -34,14 +34,14 @@
         	$email = $_POST['email'];
         	$cell = $_POST ['cell'];
         	// Photo manage
-        	$photo = $_FILES['photo'];
+        	$img = $_FILES['photo'];
 
         	 if(empty($name) || empty($email) || empty($cell)){
         	 	$mess = "<p class='alert alert-danger'>Empty Fields Requierd !<button class='close' data-dismiss='alert'>&times;</button></p>";
         	 }elseif(filter_var($email, FILTER_VALIDATE_EMAIL)==false){
         	 	$mess = "<p class='alert alert-warning'>Valid Email Requierd !<button class='close' data-dismiss='alert'>&times;</button></p>";
         	 }else{
-        	   $mess =	$student -> addStudent($name, $email, $cell, $photo );
+        	   $mess =	$student -> addStudent($name, $email, $cell, $img );
         	 }
         }
 
