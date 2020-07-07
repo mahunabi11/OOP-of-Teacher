@@ -26,7 +26,7 @@
       private function connection()
     {   
     	
-    	return $this ->connection -> new mysqli($this ->name, $this ->user, $this ->pass, $this ->dbname); 
+    	return $this ->connection = new mysqli($this ->name, $this ->user, $this ->pass, $this ->dbname); 
     }
 
   }

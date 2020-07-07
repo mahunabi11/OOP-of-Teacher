@@ -1,13 +1,13 @@
- 
+<?php require_once "vendor/autoload.php"; ?>
 <?php  
 	
 	// Class use
-	// use App\Controller\Teacher;
+	use App\Controller\Teacher;
 
 
 
 	// class instance 
-  // $teacher = new Teacher;
+  $teacher = new Teacher;
   
 
 
@@ -41,7 +41,7 @@
         	 }elseif(filter_var($email, FILTER_VALIDATE_EMAIL)==false){
         	 	$mess = "<p class='alert alert-warning'>Valid Email Requierd !<button class='close' data-dismiss='alert'>&times;</button></p>";
         	 }else{
-        	   $mess =	$student -> addStudent($name, $email, $cell, $img );
+        	   $mess =	$teacher -> addTeacher($name, $email, $cell, $img );
         	 }
         }
 
