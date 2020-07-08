@@ -8,10 +8,24 @@
   */
  class Teacher extends Database
  {
+ 	/**
+ 	 * add new teacher
+ 	 */
    public function addTeacher($name, $email, $cell, $img)
    {
-   	echo $name;
+      $data = $this ->insert('teacher', [
+        
+        'name' => $name,
+        'email' => $email,
+        'cell'  => $cell,
+
+       ]);
+      if($data){
+      	return  "<p class='alert alert-success'>Data added successful !<button class='close' data-dismiss='alert'>&times;</button></p>";
+      }
    }
+
+
  }
 
 ?> 
