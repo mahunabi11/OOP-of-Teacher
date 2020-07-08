@@ -13,11 +13,16 @@
  	 */
    public function addTeacher($name, $email, $cell, $img)
    {
+
+  
+   	
+       // Data send
       $data = $this ->insert('teacher', [
         
         'name' => $name,
         'email' => $email,
         'cell'  => $cell,
+        'photo'  => $this -> fileUpload($img,'media/img/teachers/'),
 
        ]);
       if($data){
