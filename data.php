@@ -2,20 +2,20 @@
 <?php  
 	
 	// Class use
-	use App\Controller\Student;
+	use App\Controller\Teacher;
 
 
 
 	// class instance 
-  $student = new Student;
+  $teacher = new Teacher ;
 
   // Data delete system
 
-  if(isset($_GET['id'])){
-  	$id = $_GET['id'];
+  // if(isset($_GET['id'])){
+  // 	$id = $_GET['id'];
   	
-  	$mess = $student -> dataDelete($id);
-  }
+  // 	$mess = $teacher -> dataDelete($id);
+  // }
   
  
 
@@ -51,6 +51,7 @@
 							<th>Name</th>
 							<th>Email</th>
 							<th>Cell</th>
+							<th>Dept</th>
 							<th>Photo</th>
 							<th>Action</th>
 						</tr>
@@ -59,17 +60,18 @@
 
 						<?php
                           
-                        $data = $student -> allStudents('DESC');
+                        $data = $teacher -> allTeacher('DESC');
                          $i = 1;
-                        while ($stu = $data -> fetch_assoc()) :
+                        while ($tea = $data -> fetch_assoc()) :
                      
 						?>
 						<tr>
 							<td><?php echo $i; $i++;?></td>
-							<td><?php echo $stu['name']; ?></td>
-							<td><?php echo $stu['email']; ?></td>
-							<td><?php echo $stu['cell']; ?></td>
-							<td><img src="media/img/students/<?php echo $stu['photo']; ?>" alt=""></td>
+							<td><?php echo $tea['name']; ?></td>
+							<td><?php echo $tea['email']; ?></td>
+							<td><?php echo $tea['cell']; ?></td>
+							<td><?php echo $tea['dept']; ?></td>
+							<td><img src="media/img/teachers/<?php echo $tea['photo']; ?>" alt=""></td>
 							<td>
 								<a class="btn btn-sm btn-info" href="view.php?id=<?php echo $stu['id']; ?>">View</a>
 								<a class="btn btn-sm btn-warning" href="#">Edit</a>

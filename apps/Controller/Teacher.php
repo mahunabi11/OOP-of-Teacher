@@ -11,7 +11,7 @@
  	/**
  	 * add new teacher
  	 */
-   public function addTeacher($name, $email, $cell, $img)
+   public function addTeacher($name, $email, $cell, $dept, $img)
    {
 
   
@@ -22,6 +22,7 @@
         'name' => $name,
         'email' => $email,
         'cell'  => $cell,
+        'dept'  => $dept,
         'photo'  => $this -> fileUpload($img,'media/img/teachers/'),
 
        ]);
@@ -30,7 +31,16 @@
       }
    }
 
+   // Get all data
 
+    public function allTeacher()
+    {
+        $data = $this ->all('teacher', 'DESC' );
+
+        if($data){
+        	return $data;
+        }
+    }
  }
 
 ?> 

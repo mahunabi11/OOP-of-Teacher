@@ -79,8 +79,17 @@
  	    	return true;
  	    }
     }
-
-
+   /**
+    * Show all data method
+    */
+   protected function all($table, $order_by)
+   {
+          $sql = "SELECT * FROM $table ORDER BY id $order_by";
+ 	      $data = $this ->connection() ->query ($sql);
+ 	    if($data){
+ 	    	return $data;
+ 	    }
+     }
   }
 
 ?>

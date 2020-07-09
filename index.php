@@ -33,15 +33,16 @@
         	$name = $_POST['name'];
         	$email = $_POST['email'];
         	$cell = $_POST ['cell'];
+        	$dept = $_POST ['dept'];
         	// Photo manage
         	$img = $_FILES['photo'];
 
-        	 if(empty($name) || empty($email) || empty($cell)){
+        	 if(empty($name) || empty($email) || empty($cell) || empty($dept)){
         	 	$mess = "<p class='alert alert-danger'>Empty Fields Requierd !<button class='close' data-dismiss='alert'>&times;</button></p>";
         	 }elseif(filter_var($email, FILTER_VALIDATE_EMAIL)==false){
         	 	$mess = "<p class='alert alert-warning'>Valid Email Requierd !<button class='close' data-dismiss='alert'>&times;</button></p>";
         	 }else{
-        	   $mess =	$teacher -> addTeacher($name, $email, $cell, $img );
+        	   $mess =	$teacher -> addTeacher($name, $email, $cell, $dept, $img );
         	 }
         }
 
@@ -69,6 +70,10 @@
 					<div class="form-group">
 						<label for="">Cell</label>
 						<input name="cell" class="form-control" type="text">
+					</div>
+					<div class="form-group">
+						<label for="">Dept</label>
+						<input name="dept" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Photo</label>
